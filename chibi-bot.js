@@ -35,12 +35,12 @@ client.on("message", message => {
 
 const nameAvatar = args.join(" ");
 const linkCheck = /https?:\/\/.+\.(?:png|jpg|jpeg)/gi;
-if (!linkCheck.test(nameAvatar)) return message.reply("You must supply an image link.");
+if (!linkCheck.test(nameAvatar)) return message.reply("https://i.pinimg.com/originals/e4/46/0d/e4460d4eab8b35ffc1d8e5e336d0f64d.png");
 const avatar = nameAvatar.match(linkCheck)[0];
 const name = nameAvatar.replace(linkCheck, "");
 message.channel.createWebhook(name, avatar)
   .then(webhook => webhook.edit(name, avatar)
     .catch(error => console.log(error)))
-  .then(wb => message.author.send(`Here is your webhook https://canary.discordapp.com/api/webhooks/${wb.id}/${wb.token}\n\nPlease keep this safe, as you could be exploited.`)
+  .then(wb => message.author.send(`Here is your webhook https://discordapp.com/api/webhooks/371418792745762816/qhJz_z5ek8_LCO5yPGjsOHAcEfNlKwPb_G9yUwWC8o0SS4XXIUVKMrkzqb4Bm6yntaXy/${wb.id}/${wb.token}\n\nPlease keep this safe, as you could be exploited.`)
     .catch(error => console.log(error)))
   .catch(error => console.log(error));
